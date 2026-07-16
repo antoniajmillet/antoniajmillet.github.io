@@ -1312,3 +1312,147 @@ summary {
     font-size: 0.72rem;
   }
 }
+
+/* === FINAL MOBILE HEADER AND COLOR POLISH === */
+
+/*
+  Restore the intended desktop hero colors after the hero text
+  was divided into separate spans.
+*/
+
+.hero-fields .hero-field {
+  padding: 0;
+  color: var(--teal-dark);
+}
+
+.hero-position .position-item {
+  padding: 0;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/*
+  Mobile-only adjustments.
+*/
+
+@media (max-width: 600px) {
+  /*
+    Keep the complete yellow header—including the name and all
+    navigation links—at the top while the page scrolls.
+  */
+
+  .site-header {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  .header-inner {
+    width: calc(100% - 2rem);
+    min-height: 0;
+    align-items: flex-start;
+    gap: 0.22rem;
+    padding-top: 0.65rem;
+    padding-bottom: 0.72rem;
+  }
+
+  /*
+    Slightly enlarge the header text.
+  */
+
+  .site-name {
+    font-size: 1.16rem;
+    line-height: 1.2;
+  }
+
+  .site-navigation {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: visible;
+    white-space: nowrap;
+  }
+
+  .site-navigation a,
+  .nav-separator {
+    font-size: clamp(0.73rem, 2.85vw, 0.82rem);
+    line-height: 1.5;
+  }
+
+  .nav-separator {
+    margin-right: 0.18rem;
+    margin-left: 0.18rem;
+  }
+
+  /*
+    Slightly enlarge the hero text while retaining the intended colors.
+  */
+
+  .hero-fields {
+    font-size: 1.02rem;
+  }
+
+  .hero-fields .hero-field {
+    color: var(--teal-dark);
+  }
+
+  .fellowship-line {
+    font-size: 0.98rem;
+  }
+
+  .fellowship-line a {
+    color: var(--coral-dark);
+  }
+
+  .hero-position {
+    font-size: 1rem;
+  }
+
+  .hero-position .position-item {
+    color: var(--ink-soft);
+  }
+
+  /*
+    Match both button labels to the research-field text size.
+    Button dimensions and photo spacing remain unchanged.
+  */
+
+  .hero-links .button {
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    font-size: 1.02rem;
+    line-height: 1.15;
+  }
+
+  /*
+    Account for the taller sticky header when using navigation links.
+  */
+
+  .section-band {
+    scroll-margin-top: 112px;
+  }
+}
+
+@media (max-width: 370px) {
+  .site-navigation a,
+  .nav-separator {
+    font-size: 0.69rem;
+  }
+
+  .nav-separator {
+    margin-right: 0.13rem;
+    margin-left: 0.13rem;
+  }
+
+  .hero-fields,
+  .hero-links .button {
+    font-size: 0.94rem;
+  }
+
+  .fellowship-line,
+  .hero-position {
+    font-size: 0.93rem;
+  }
+}
